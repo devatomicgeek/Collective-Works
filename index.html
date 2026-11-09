@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en"><head>
+<meta name="app-version" content="4.0"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Collective Works | Version 4.0</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=Permanent+Marker&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet"><style>
+:root{--paper:#eeeae0;--ink:#10100e;--line:#b7b2a8;--red:#e32c23}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#161614;color:var(--ink);font-family:'DM Sans',sans-serif}button,a{font:inherit}a{color:inherit;text-decoration:none}button{cursor:pointer}.shell{max-width:1440px;margin:30px auto;background:var(--paper);box-shadow:0 24px 90px #0005;overflow:hidden}.nav{display:flex;align-items:stretch;border-bottom:1px solid var(--line);min-height:68px}.brand{font-weight:900;letter-spacing:-.07em;font-size:22px;padding:19px 26px;border-right:1px solid var(--line)}.brand span{color:var(--red)}.descriptor{font-size:9px;line-height:1.35;letter-spacing:.1em;padding:17px 22px;margin-right:auto}.links{display:flex}.links a{font-size:10px;text-transform:uppercase;letter-spacing:.09em;border-left:1px solid var(--line);padding:26px 21px}.links a:hover,.links a.active{background:var(--ink);color:var(--paper)}.status{background:var(--red);width:13px;height:13px;border-radius:50%;display:inline-block}.status-cell{padding:25px;border-left:1px solid var(--line)}.page{display:none}.page.active{display:block}.hero{min-height:630px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:26px 35px 32px}.eyebrow{font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:700}.hero-title{font:900 clamp(100px,17vw,250px)/.75 'Barlow Condensed',sans-serif;letter-spacing:-.055em;margin:18px 0 0;position:relative;z-index:2;white-space:nowrap}.hero-image{position:absolute;right:10%;top:155px;width:57%;height:385px;object-fit:cover;filter:grayscale(.3);z-index:1;transform:rotate(-3deg);box-shadow:12px 15px 0 #111}.hero-copy{position:absolute;bottom:50px;left:38px;z-index:3;font:800 clamp(23px,3vw,40px)/.96 'Barlow Condensed',sans-serif;text-transform:uppercase}.hero-right{position:absolute;bottom:38px;right:36px;z-index:3;text-align:right;font-size:10px;letter-spacing:.12em;text-transform:uppercase;max-width:190px}.round{display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--red);color:#080808;border:0;width:112px;height:112px;font-size:11px;font-weight:900;letter-spacing:.06em;text-align:center;transform:rotate(-15deg);transition:transform .3s}.round:hover{transform:rotate(0) scale(1.07)}.hero .round{position:absolute;left:34%;bottom:40px;z-index:4}.scribble{font:clamp(30px,5vw,75px)/1 'Permanent Marker',cursive;transform:rotate(-5deg);display:inline-block;font-weight:400}.statement{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}.statement>div{padding:14px 28px;border-right:1px solid var(--line);font:900 clamp(48px,7vw,115px)/.9 'Barlow Condensed',sans-serif;text-transform:uppercase}.statement>div:last-child{border:0}.statement .scribble{font-size:clamp(34px,5vw,77px)}.section{padding:34px 35px 44px;border-bottom:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;gap:12px}.section-head h2{font:900 clamp(38px,5vw,68px)/.9 'Barlow Condensed',sans-serif;margin:0;text-transform:uppercase}.section-head span,.section-head a{font-size:10px;letter-spacing:.13em;text-transform:uppercase}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.card{cursor:pointer}.card img{width:100%;aspect-ratio:1.48;object-fit:cover;display:block;filter:saturate(.7);transition:filter .25s,transform .25s}.card:hover img{filter:saturate(1)}.thumb{overflow:hidden;background:#bbb;position:relative}.play{position:absolute;right:14px;bottom:14px;background:var(--red);width:45px;height:45px;border-radius:50%;display:grid;place-items:center;font-size:16px}.card .meta{display:flex;justify-content:space-between;margin-top:10px;font-size:10px;letter-spacing:.12em}.card h3{font:800 27px/.95 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:5px 0}.card p{font-size:11px;margin:0;color:#555}.split{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}.split>div{padding:35px;border-right:1px solid var(--line)}.split>div:last-child{border:0}.split h2{font:900 clamp(50px,7vw,95px)/.85 'Barlow Condensed',sans-serif;margin:15px 0}.split p{max-width:360px;font-size:13px;line-height:1.7}.cta{display:inline-block;background:var(--ink);color:white;padding:14px 22px;text-transform:uppercase;font-size:10px;letter-spacing:.12em;margin-top:15px}.category{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);font:800 clamp(25px,3vw,44px) 'Barlow Condensed',sans-serif}.category span{font:700 10px 'DM Sans',sans-serif}.category:hover{color:var(--red)}.footer{padding:34px 35px}.footer h2{font:900 clamp(70px,11vw,160px)/.78 'Barlow Condensed',sans-serif;margin:10px 0 35px}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:20px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}.page-hero{padding:38px 35px 48px;border-bottom:1px solid var(--line)}.page-hero h1{font:900 clamp(95px,15vw,220px)/.76 'Barlow Condensed',sans-serif;letter-spacing:-.045em;margin:22px 0}.page-hero p{font-size:12px;max-width:450px;line-height:1.7}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 25px}.filter{border:1px solid var(--ink);background:transparent;padding:12px 17px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}.filter.active,.filter:hover{background:var(--ink);color:var(--paper)}.article-body{max-width:740px;margin:auto;padding:40px 25px 70px;font-size:17px;line-height:1.8}.article-body h2{font:900 54px/.95 'Barlow Condensed',sans-serif}.article-body img{width:100%;margin:20px 0}.back{background:none;border:0;padding:0;font-size:11px;text-transform:uppercase;letter-spacing:.15em}.modal{position:fixed;inset:0;background:#000d;z-index:50;display:none;align-items:center;justify-content:center;padding:25px}.modal.open{display:flex}.modal-box{width:min(960px,100%);background:var(--paper);padding:16px}.modal-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;font-size:12px}.modal iframe{width:100%;aspect-ratio:16/9;border:0}.modal button{background:var(--ink);color:white;border:0;padding:8px 13px}.hidden{display:none!important}@media(max-width:800px){.shell{margin:0}.nav{flex-wrap:wrap}.descriptor{display:none}.links{width:100%;border-top:1px solid var(--line);overflow:auto}.links a{flex:1;text-align:center;padding:16px 9px;font-size:9px}.status-cell{margin-left:auto}.hero{min-height:550px;padding:25px 18px}.hero-title{font-size:clamp(76px,18vw,145px)}.hero-image{width:75%;height:300px;right:8%;top:155px}.hero-copy{left:18px;bottom:40px}.hero-right{right:15px;bottom:22px;max-width:115px;font-size:8px}.hero .round{left:40%;bottom:75px;width:85px;height:85px;font-size:9px}.statement>div{padding:15px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.section{padding:25px 18px}.split>div{padding:25px 18px}.footer{padding:30px 18px}.page-hero{padding:30px 18px}}@media(max-width:520px){.hero{min-height:500px}.hero-title{font-size:18vw}.hero-image{top:140px;width:83%;right:8%;height:265px}.hero-copy{font-size:26px}.hero-right{display:none}.hero .round{left:auto;right:12%;bottom:35px}.statement{grid-template-columns:1fr}.statement>div{border-right:0;border-bottom:1px solid var(--line)}.cards{grid-template-columns:1fr}.split{grid-template-columns:1fr}.split>div{border-right:0;border-bottom:1px solid var(--line)}.footer h2{font-size:19vw}.page-hero h1{font-size:19vw}}
+
+/* Theme tokens and signature identity */
+:root{color-scheme:light;--card-subtle:#555;--thumb-bg:#bbb;--shell-surround:#161614;--shell-shadow:#0005;--cta-ink:#fff}
+html[data-theme="dark"]{color-scheme:dark;--paper:#171716;--ink:#f1eee7;--line:#55534e;--card-subtle:#b9b5ad;--thumb-bg:#343330;--shell-surround:#080808;--shell-shadow:#0008;--cta-ink:#171716}
+body{background:var(--shell-surround);transition:background .25s,color .25s}
+.shell{box-shadow:0 24px 90px var(--shell-shadow);transition:background .25s}
+.brand{display:flex;align-items:center;justify-content:center;min-width:166px;padding:5px 17px}
+.brand-logo{width:145px;height:57px;object-fit:contain;display:block}
+.logo-dark{display:none!important}html[data-theme="dark"] .logo-light{display:none!important}html[data-theme="dark"] .logo-dark{display:block!important}
+.status-cell{padding:0;border-left:1px solid var(--line);display:flex;align-items:stretch}
+.theme-toggle{display:flex;align-items:center;gap:8px;padding:0 15px;border:0;background:transparent;color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.12em;min-height:62px}
+.theme-toggle:hover{background:var(--ink);color:var(--paper)}.theme-icon{font-size:19px;line-height:1}
+.card p{color:var(--card-subtle)}.thumb{background:var(--thumb-bg)}.cta{color:var(--cta-ink)}.modal button{color:var(--paper)}
+.footer-brand{display:flex;align-items:center}.footer-brand img{width:115px;height:55px;object-fit:contain}
+@media(max-width:800px){.brand{min-width:140px}.brand-logo{width:125px}.theme-toggle{min-height:62px}}
+@media(max-width:520px){.theme-label{display:none}.theme-toggle{padding:0 18px}}
+@media(prefers-reduced-motion:reduce){body,.shell{transition:none}}
+
+/* V1.2: keep the complete headline legible, with the photograph in its own visual layer. */
+.hero{min-height:800px;isolation:isolate}
+.hero-title{font-size:clamp(78px,12.4vw,178px);line-height:.88;letter-spacing:-.025em;white-space:normal;max-width:100%;z-index:3;overflow-wrap:normal}
+.hero-image{top:365px;right:7%;width:64%;height:325px;z-index:1}
+.hero-copy{bottom:52px;z-index:3}
+.hero-right{bottom:36px;z-index:3}
+.hero .round{bottom:75px;left:35%;z-index:4}
+@media(max-width:800px){.hero{min-height:650px}.hero-title{font-size:clamp(66px,13.7vw,112px);line-height:.9}.hero-image{top:255px;right:7%;width:77%;height:300px}.hero-copy{bottom:35px}.hero .round{bottom:62px}}
+@media(max-width:520px){.hero{min-height:575px}.hero-title{font-size:clamp(52px,14.3vw,78px);letter-spacing:-.025em}.hero-image{top:220px;right:7%;width:83%;height:270px}.hero-copy{bottom:26px;font-size:24px}.hero .round{bottom:36px;right:10%;left:auto}}
+
+/* ================================================================
+   V1.3 / HERO PHOTO ALIGNMENT
+   The featured photograph stays perfectly horizontal in both themes.
+   Change object-position to choose which part of the photo is visible.
+   No rotation is applied to the photo or its hover state.
+   ================================================================ */
+.hero-image {
+  transform: none;                /* Remove the old -3 degree tilt. */
+  box-shadow: 12px 12px 0 var(--ink); /* Keep the editorial offset frame. */
+  object-position: center center; /* Center the landscape inside its frame. */
+}
+
+/* ================================================================
+   V1.4 / HERO SPACING BALANCE
+   Keep the title large, but bring the photo closer to the headline.
+   Values are grouped here for easy manual adjustments.
+   ================================================================ */
+.hero {
+  min-height: 690px; /* Shorter hero eliminates excess vertical empty space. */
+}
+.hero-title {
+  margin-top: 14px; /* Tighten the gap beneath the small archive label. */
+}
+.hero-image {
+  top: 295px; /* Pull the photo upward, closer to the main title. */
+  height: 300px; /* Maintain a wide, cinematic photo crop. */
+  right: 6%; /* Keep a comfortable right-side margin. */
+}
+.hero-copy {
+  bottom: 34px; /* Anchor the supporting headline near the bottom edge. */
+}
+.hero-right {
+  bottom: 28px; /* Align the journal description with the lower composition. */
+}
+.hero .round {
+  bottom: 48px; /* Keep the watch button overlapping the photo edge. */
+}
+/* Tablet: use tighter proportions without covering the heading. */
+@media (max-width: 800px) {
+  .hero { min-height: 590px; }
+  .hero-image { top: 225px; height: 275px; right: 6%; }
+  .hero-copy { bottom: 28px; }
+  .hero-right { bottom: 22px; }
+  .hero .round { bottom: 45px; }
+}
+/* Small screens: preserve a readable title and enough room for the button. */
+@media (max-width: 520px) {
+  .hero { min-height: 520px; }
+  .hero-image { top: 190px; height: 250px; right: 7%; }
+  .hero-copy { bottom: 22px; }
+  .hero .round { bottom: 30px; }
+}
+
+/* ================================================================
+   V1.5 / HERO PHOTO POSITION (REFERENCE DIAGRAM)
+   Place the photo in the upper-right area, clear of the main title.
+   These rules intentionally override earlier hero positioning rules.
+   ================================================================ */
+.hero {
+  min-height: 650px; /* Allow room for the headline, photo, and captions. */
+}
+.hero-title {
+  position: relative; /* Keep the title above the photograph if edges meet. */
+  z-index: 3; /* Preserve readable lettering in either color theme. */
+}
+.hero-image {
+  top: 78px; /* Align the image near the top of the headline. */
+  right: 2%; /* Place it against the right side with a small margin. */
+  width: 56%; /* Reserve the left side for LIFE IN MOTION. */
+  height: 425px; /* Fill the large rectangular image area in the diagram. */
+  transform: none; /* Keep the photograph perfectly horizontal. */
+  object-fit: cover; /* Fill the frame without distorting the photograph. */
+  object-position: center; /* Use the middle of the source image. */
+  z-index: 1; /* Image stays behind the headline. */
+}
+.hero .round {
+  left: 42%; /* Align the play button with the photograph's lower-left edge. */
+  bottom: 108px; /* Overlap the photo without covering the captions. */
+}
+.hero-copy { bottom: 40px; } /* Keep the three-word caption bottom-left. */
+.hero-right { bottom: 34px; } /* Keep the journal description bottom-right. */
+/* On tablets, move the image down to keep the title legible. */
+@media (max-width: 800px) {
+  .hero { min-height: 620px; }
+  .hero-image { top: 225px; right: 4%; width: 72%; height: 285px; }
+  .hero .round { left: 36%; bottom: 83px; }
+}
+/* On phones, stack the photo beneath the headline for clarity. */
+@media (max-width: 520px) {
+  .hero { min-height: 560px; }
+  .hero-image { top: 210px; right: 5%; width: 88%; height: 245px; }
+  .hero .round { left: auto; right: 12%; bottom: 75px; }
+  .hero-copy { bottom: 24px; }
+}
+
+/* ==========================================================
+   V1.6 / MOBILE NAVIGATION
+   Desktop keeps the original navigation. On narrow screens,
+   links become a full-width dropdown opened by a menu button.
+   ========================================================== */
+.menu-toggle { display:none; } /* Hide hamburger on desktop. */
+@media (max-width:800px) {
+  .nav { display:flex; flex-wrap:wrap; align-items:stretch; position:relative; }
+  .brand { min-width:0; flex:1; display:flex; align-items:center; padding:10px 18px; border-right:0; }
+  .brand-logo { width:120px; max-height:70px; object-fit:contain; }
+  .menu-toggle { display:flex; align-items:center; justify-content:center; gap:9px; order:2; min-width:92px; padding:10px 15px; border:0; border-left:1px solid var(--line); background:transparent; color:var(--ink); font-size:10px; font-weight:700; letter-spacing:.1em; }
+  .menu-lines { display:flex; flex-direction:column; justify-content:center; gap:5px; width:23px; }
+  .menu-lines span { display:block; height:2px; width:100%; background:currentColor; transition:transform .2s,opacity .2s; }
+  .menu-toggle[aria-expanded="true"] .menu-lines span:first-child { transform:translateY(7px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] .menu-lines span:nth-child(2) { opacity:0; }
+  .menu-toggle[aria-expanded="true"] .menu-lines span:last-child { transform:translateY(-7px) rotate(-45deg); }
+  .status-cell { order:1; margin-left:0; padding:0; display:flex; align-items:stretch; border-left:1px solid var(--line); }
+  .theme-toggle { min-height:70px; padding:0 13px; }
+  .links { display:none; order:3; width:100%; flex-direction:column; overflow:visible; border-top:1px solid var(--line); }
+  .links.is-open { display:flex; }
+  .links a { flex:none; display:block; width:100%; text-align:left; padding:18px 22px; font-size:12px; border-left:0; border-bottom:1px solid var(--line); }
+  .links a:last-child { border-bottom:0; }
+}
+@media (max-width:400px) {
+  .menu-toggle { min-width:68px; padding:10px 12px; }
+  .menu-caption { display:none; } /* Preserve space for logo on small phones. */
+  .theme-toggle { padding:0 12px; }
+  .brand-logo { width:105px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .menu-lines span { transition:none; }
+}
+
+/* ================================================================
+   V1.8 / HERO METADATA CLEANUP
+   The archive issue number above the title is the only photo tracker.
+   No duplicate photo label is displayed below the hero photograph.
+   ================================================================ */
+
+/* ================================================================
+   V1.9 / APPROVED EDITORIAL REFINEMENTS
+   01. Two-line journal description with its date on a separate line.
+   02. Red handwritten statement in either theme.
+   03. Creative Archive label simplified in the HTML above.
+   04. Contact call-to-action with theme-aware colors and hover.
+   ================================================================ */
+.hero-right {
+  max-width: 340px; /* Room for the two intended lines on desktop. */
+  width: max-content; /* Avoid narrow automatic wrapping. */
+}
+.hero-right-description {
+  display: block; /* Keep the description grouped together. */
+  white-space: nowrap; /* Preserve the requested two-line layout. */
+}
+.hero-right-date {
+  display: block; /* Put the year below the description. */
+  margin-top: 20px; /* Add deliberate breathing room above the date. */
+}
+.statement-highlight { color: var(--red); } /* Red in light and dark modes. */
+.contact-cta {
+  margin-top: 0; /* Place the button directly after the heading. */
+  margin-bottom: 38px; /* Separate it from the bottom footer information. */
+  color: var(--cta-ink); /* Match the active theme's button contrast. */
+  transition: background-color .2s ease, color .2s ease;
+}
+.contact-cta:hover, .contact-cta:focus-visible {
+  background: var(--red); /* Signal-red interactive state. */
+  color: #10100e; /* Strong contrast on red. */
+}
+@media (max-width: 800px) {
+  .hero-right { max-width: 240px; font-size: 9px; }
+}
+@media (max-width: 520px) {
+  .hero-right { display: none; } /* Retain existing mobile layout behavior. */
+  .contact-cta { margin-bottom: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-cta { transition: none; }
+}
+
+/* ============================================================
+   V2.1 / ABOUT PHOTO, BIOGRAPHY AND RESPONSIVE TYPE
+   The placeholder can later be replaced by an <img> element.
+   ============================================================ */
+.about-hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(220px,1fr);align-items:center;gap:clamp(24px,4vw,65px)}
+.about-hero-copy{min-width:0}
+.about-hero h1{font-size:clamp(70px,10vw,155px);overflow-wrap:normal}
+.about-photo-placeholder{aspect-ratio:1 / 1;width:100%;max-width:420px;justify-self:end;display:grid;place-items:center;border:1px solid var(--line);background:var(--thumb-bg);color:var(--ink)}
+.about-photo-placeholder img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;min-height:0}.about-photo-placeholder span{font-size:11px;font-weight:700;letter-spacing:.18em;text-align:center;padding:12px}
+.about-bio h3{font-size:clamp(19px,2vw,27px);margin:18px 0 6px;font-weight:600}
+.about-bio h4{font:800 clamp(29px,3.3vw,46px)/1.04 'Barlow Condensed',sans-serif;margin:0 0 23px;color:var(--red)}
+.about-bio p{font-size:clamp(14px,1.2vw,17px);line-height:1.75;max-width:550px;margin:0 0 19px}
+#about .split h2{font-size:clamp(49px,6.1vw,87px);overflow-wrap:normal}
+@media(max-width:800px){.about-hero{grid-template-columns:minmax(0,1fr) minmax(180px,.8fr);gap:22px}.about-hero h1{font-size:clamp(60px,9vw,100px)}}
+@media(max-width:620px){.about-hero{grid-template-columns:1fr}.about-hero h1{font-size:clamp(65px,15vw,105px)}.about-photo-placeholder{justify-self:start;max-width:420px}.about-bio h4{font-size:clamp(30px,9vw,46px)}}
+/* V2.1: LIFE LOG headline should wrap naturally on narrow devices. */
+#journal .page-hero h1{font-size:clamp(82px,15vw,210px)}
+@media(max-width:520px){#journal .page-hero h1{font-size:clamp(74px,17vw,110px)}}
+.posting-soon{grid-column:1/-1;padding:clamp(30px,5vw,75px) 0;border-top:1px solid var(--line)}.posting-soon strong{display:block;font-family:Impact,Arial,sans-serif;font-size:clamp(48px,9vw,130px);line-height:1;letter-spacing:-.035em}.posting-soon p{font-size:clamp(15px,2vw,22px);margin:18px 0}.posting-soon small{letter-spacing:.18em;font-weight:800}/* V2.5 / Gallery carousel, image zoom and responsive controls. */
+.gallery-zoom{display:block;width:100%;padding:0!important;background:transparent!important;border:0;cursor:zoom-in}
+.gallery-zoom img{display:block;max-width:100%;max-height:65vh;width:100%;object-fit:contain}
+.image-fullscreen{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.96);display:flex;align-items:center;justify-content:center;padding:60px 15px 20px}
+.image-fullscreen img{max-width:100%;max-height:100%;object-fit:contain}
+.image-fullscreen button{position:absolute;top:16px;right:20px;background:#eeeae3;color:#151515;border:0;padding:12px 18px;cursor:pointer}
+@media(max-width:600px){.gallery-controls{gap:5px}.gallery-controls button{padding:10px;font-size:11px}}
+
+
+/* ============================================================
+   V2.6 / HANDWRITTEN EMPTY STATE
+   Match the existing "tells a story." brush lettering.
+   ============================================================ */
+.posting-soon strong {
+  font-family: 'Permanent Marker', cursive;
+  font-weight: 400;
+  font-size: clamp(48px, 8vw, 118px);
+  line-height: 1.15;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+/* ============================================================
+   V2.6 / UNCROPPED CONTENT VIEWER
+   Keep the complete artwork visible at its natural aspect ratio.
+   Thumbnail cards still use cover, but the popup never does.
+   ============================================================ */
+.content-inner .gallery-zoom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+.content-inner .gallery-zoom img,
+.content-inner #gallery-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(75dvh, 1000px);
+  object-fit: contain;
+  object-position: center;
+  margin: 20px auto;
+}
+/* Cover images for video projects must also show the whole frame. */
+.content-inner > img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 75dvh;
+  object-fit: contain;
+  margin: 20px auto;
+}
+@media (max-width: 600px) {
+  .content-inner .gallery-zoom img,
+  .content-inner #gallery-image { max-height: 65dvh; }
+}
+
+
+/* V2.8: Missing/broken covers get a branded placeholder rather than a broken image icon. */
+.no-image{width:100%;height:100%;min-height:180px;display:grid;place-content:center;justify-items:center;gap:10px;background:var(--thumb-bg,#d8d5cd);color:var(--ink);border:1px solid var(--line);font:700 12px/1.4 Arial,sans-serif;letter-spacing:.16em}
+.no-image svg{width:40px;height:40px;fill:none;stroke:currentColor;stroke-width:1.5}
+/* V3.0: Typewriter typography is scoped to descriptions in both content viewers. */
+.typewriter-description{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Consolas,monospace;font-size:16px;line-height:1.8;letter-spacing:.2px;overflow-wrap:anywhere}
+.typewriter-description p{margin:0 0 1.2em}
+@media(max-width:600px){.typewriter-description{font-size:14px}}
+
+/* V3.7: Explicit red accent in all public themes. */
+.footer .fixed-contact-headline .contact-highlight { color: #E52520 !important; -webkit-text-fill-color: #E52520 !important; }
+
+/* V3.7 / Collective Works empty state: shown only when no projects are published. */
+#work-cards:has(.works-empty-state){display:block;}
+.works-empty-state{width:100%;min-height:340px;padding:clamp(48px,8vw,100px) 18px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;}
+.works-empty-title{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(52px,10vw,136px);line-height:.9;letter-spacing:-.045em;}
+.works-empty-accent{display:inline-block;color:#E52520;font-family:'Permanent Marker',cursive;font-weight:400;font-size:.8em;letter-spacing:-.04em;line-height:1.15;}
+.works-empty-state p{margin:4px 0 0;font-family:'DM Sans',sans-serif;font-size:clamp(13px,1.5vw,17px);color:var(--muted,#777);}
+.works-empty-state small{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;opacity:.65;}
+@media(max-width:600px){.works-empty-state{min-height:300px;padding:60px 12px;gap:14px}.works-empty-title{font-size:clamp(49px,13vw,75px)}}
+
+/* V4.6: Restore original oversized popup titles; allow natural wrapping. */
+.youtube-fallback{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;margin:0 0 18px;border:1px solid currentColor;font:700 11px 'DM Sans',sans-serif;letter-spacing:.1em;text-decoration:none;color:inherit;background:transparent}
+.youtube-fallback:hover{background:var(--ink);color:var(--paper)}
+.youtube-embed iframe{margin-bottom:12px}
+/* V4.6: Life Log placeholder and mobile footer stack. */
+#journal-cards:has(.life-log-empty){display:block}
+.life-log-empty{width:100%;min-height:290px;padding:clamp(55px,7vw,100px) 0;border-top:0}
+.life-log-empty strong{font-family:'Permanent Marker',cursive;font-weight:400;font-size:clamp(48px,8vw,108px);letter-spacing:-.035em;line-height:1.15}
+@media(max-width:600px){.footer-row{display:flex;flex-direction:column;align-items:flex-start;gap:12px}.footer-brand{margin-bottom:4px}.footer-brand img{max-width:140px}.footer-row>span{max-width:100%;overflow-wrap:anywhere}.life-log-empty{padding:55px 0;min-height:260px}.life-log-empty strong{font-size:clamp(40px,12vw,68px)}}
+.theme-icon{display:inline-flex;align-items:center;justify-content:center}.theme-icon svg{display:block;width:20px;height:20px;flex:none}a,button{font-variant-emoji:text}</style><style>
+/* =============================================================
+   V2.0 / EDITORIAL LOG + CONTENT VIEWERS
+   Journal and project viewers share accessible modal behavior.
+   ============================================================= */
+.journal-intro{max-width:680px!important;line-height:1.9!important;margin-top:24px}
+.content-modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.86);display:none;align-items:center;justify-content:center;padding:24px}
+.content-modal.open{display:flex}
+.content-panel{background:var(--paper);color:var(--ink);width:min(1020px,100%);max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;border:1px solid var(--line)}
+.content-toolbar{position:sticky;top:0;z-index:2;background:var(--paper);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px}
+.content-toolbar span{font-size:11px;font-weight:700;letter-spacing:.17em;text-transform:uppercase}
+.content-close{background:var(--ink);color:var(--paper);border:0;min-height:44px;padding:0 17px;cursor:pointer}
+.content-inner{padding:24px clamp(18px,4vw,54px) 45px}
+.content-inner h2{font:900 clamp(54px,9vw,112px)/.86 'Barlow Condensed',sans-serif;margin:18px 0 24px;text-transform:uppercase}
+.content-inner .viewer-meta{font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.content-inner p{max-width:740px;font-size:16px;line-height:1.8}
+.content-inner img{width:100%;display:block;object-fit:cover;margin:20px 0}
+.content-inner iframe{width:100%;aspect-ratio:16/9;border:0;display:block;margin:20px 0}
+.gallery-controls{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:12px}
+.gallery-controls button{border:1px solid var(--line);color:var(--ink);background:transparent;min-height:44px;padding:10px 16px}
+.gallery-controls button:disabled{opacity:.35;cursor:not-allowed}
+.card:focus-visible,.content-close:focus-visible,.gallery-controls button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+@media(max-width:600px){.content-modal{padding:0}.content-panel{max-height:100dvh;height:100dvh;width:100%;border:0}.content-toolbar{padding:12px 16px}.desktop-break{display:none}}
+@media(prefers-reduced-motion:reduce){.content-modal *{scroll-behavior:auto}}
+
+/* ============================================================
+   V2.1 / ABOUT PHOTO, BIOGRAPHY AND RESPONSIVE TYPE
+   The placeholder can later be replaced by an <img> element.
+   ============================================================ */
+.about-hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(220px,1fr);align-items:center;gap:clamp(24px,4vw,65px)}
+.about-hero-copy{min-width:0}
+.about-hero h1{font-size:clamp(70px,10vw,155px);overflow-wrap:normal}
+.about-photo-placeholder{aspect-ratio:1 / 1;width:100%;max-width:420px;justify-self:end;display:grid;place-items:center;border:1px solid var(--line);background:var(--thumb-bg);color:var(--ink)}
+.about-photo-placeholder img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;min-height:0}.about-photo-placeholder span{font-size:11px;font-weight:700;letter-spacing:.18em;text-align:center;padding:12px}
+.about-bio h3{font-size:clamp(19px,2vw,27px);margin:18px 0 6px;font-weight:600}
+.about-bio h4{font:800 clamp(29px,3.3vw,46px)/1.04 'Barlow Condensed',sans-serif;margin:0 0 23px;color:var(--red)}
+.about-bio p{font-size:clamp(14px,1.2vw,17px);line-height:1.75;max-width:550px;margin:0 0 19px}
+#about .split h2{font-size:clamp(49px,6.1vw,87px);overflow-wrap:normal}
+@media(max-width:800px){.about-hero{grid-template-columns:minmax(0,1fr) minmax(180px,.8fr);gap:22px}.about-hero h1{font-size:clamp(60px,9vw,100px)}}
+@media(max-width:620px){.about-hero{grid-template-columns:1fr}.about-hero h1{font-size:clamp(65px,15vw,105px)}.about-photo-placeholder{justify-self:start;max-width:420px}.about-bio h4{font-size:clamp(30px,9vw,46px)}}
+/* V2.1: LIFE LOG headline should wrap naturally on narrow devices. */
+#journal .page-hero h1{font-size:clamp(82px,15vw,210px)}
+@media(max-width:520px){#journal .page-hero h1{font-size:clamp(74px,17vw,110px)}}
+
+/* V3.7 / Collective Works empty state: shown only when no projects are published. */
+#work-cards:has(.works-empty-state){display:block;}
+.works-empty-state{width:100%;min-height:340px;padding:clamp(48px,8vw,100px) 18px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;}
+.works-empty-title{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(52px,10vw,136px);line-height:.9;letter-spacing:-.045em;}
+.works-empty-accent{display:inline-block;color:#E52520;font-family:'Permanent Marker',cursive;font-weight:400;font-size:.8em;letter-spacing:-.04em;line-height:1.15;}
+.works-empty-state p{margin:4px 0 0;font-family:'DM Sans',sans-serif;font-size:clamp(13px,1.5vw,17px);color:var(--muted,#777);}
+.works-empty-state small{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;opacity:.65;}
+@media(max-width:600px){.works-empty-state{min-height:300px;padding:60px 12px;gap:14px}.works-empty-title{font-size:clamp(49px,13vw,75px)}}
+</style>
+
+</head><body><div class="shell"><header class="nav"><a class="brand" href="#home" aria-label="Home"><img class="brand-logo logo-light" src="assets/SBMJ-B.png" alt="Mr Jan signature"><img class="brand-logo logo-dark" src="assets/SBMJ-W.png" alt="" aria-hidden="true"></a><div class="descriptor">INDEPENDENT VISUAL JOURNAL<br>DESIGN / PHOTO / FILM</div><nav class="links" id="primary-navigation" aria-label="Main navigation"><a href="#home" data-nav="home">Home</a><a href="#works" data-nav="works">Collective Works</a><a href="#journal" data-nav="journal">LIFE LOG</a><a href="#about" data-nav="about">About</a></nav><button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation"><span class="menu-lines" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-caption">MENU</span></button><div class="status-cell"><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch color theme"><span class="theme-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.1A8.5 8.5 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14.1Z"/></svg></span><span class="theme-label">DARK</span></button></div></header>
+<main><div class="page" id="home"><section class="hero"><div class="eyebrow" id="hero-issue-label">An ongoing archive / Issue No. 001</div><h1 class="hero-title" id="featured-hero-title">LIFE IN<br>MOTION.</h1><img class="hero-image" id="featured-hero-image" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1300&q=85" alt="Cinematic mountain landscape"><div class="hero-copy">MOMENTS.<br>PLACES.<br>STORIES.</div><div class="hero-right"><span class="hero-right-description">A personal visual journal<br>of things worth remembering.</span><span class="hero-right-date">EST. 2026</span></div></section><section class="statement"><div>EVERY FRAME</div><div><span class="scribble statement-highlight">tells a story.</span></div></section><section class="section"><div class="section-head"><h2>RECENTLY DOCUMENTED.</h2><a href="#journal">ALL STORIES ↗︎</a></div><div class="cards" id="home-stories"></div></section><section class="split"><div><div class="eyebrow">Creative archive</div><h2>BEYOND<br>THE FRAME<span style="color:var(--red)">.</span></h2><p>A collection of ideas made visible. From graphic explorations to photographs and moving images.</p><a class="cta" href="#works">Explore Collective Works ↗︎</a></div><div><div class="eyebrow">Three disciplines</div><a class="category" href="#works">CREATIVE DESIGN <span>01 ↗︎</span></a><a class="category" href="#works">PHOTOGRAPHY <span>02 ↗︎</span></a><a class="category" href="#works">VIDEOGRAPHY <span>03 ↗︎</span></a></div></section></div>
+<div class="page" id="works"><section class="page-hero"><div class="eyebrow">Creative Archive</div><h1>COLLECTIVE<br>WORKS.</h1><p>Visual explorations across creative design, photography, and videography.<br class="desktop-break">An evolving collection of things made and moments captured.</p></section><section class="section"><div class="filters" id="work-filters"><button class="filter active" data-filter="All">All</button><button class="filter" data-filter="Creative Design">Creative Design</button><button class="filter" data-filter="Photography">Photography</button><button class="filter" data-filter="Videography">Videography</button></div><div class="cards" id="work-cards"></div></section></div>
+<div class="page" id="journal"><section class="page-hero"><div class="eyebrow">Moments / Places / Stories</div><h1>LIFE LOG.</h1><p class="journal-intro">Things seen, places visited, ideas collected.<br class="desktop-break">A space for films, essays, and everything in between.</p></section><section class="section"><div class="filters" id="journal-filters"><button class="filter active" data-filter="All">All Stories</button><button class="filter" data-filter="Article">Articles</button><button class="filter" data-filter="Video">Videos</button></div><div class="cards" id="journal-cards"></div></section></div>
+<div class="page" id="about"><section class="page-hero about-hero"><div class="about-hero-copy"><div class="eyebrow">A little introduction</div><h1>CURIOUS<br>BY DESIGN.</h1><p>Collective Works is an independent home for visual experiments, photographs, films, and personal stories. Always evolving, never quite finished.</p></div><div class="about-photo-placeholder" id="about-photo-display" role="img" aria-label="Square placeholder for a future portrait photograph"><span>IMAGE / COMING SOON</span></div></section><section class="split"><div><div class="eyebrow">01 / Philosophy</div><h2>CAPTURE.<br>CREATE.<br>COMPOSE.</h2></div><div><div class="eyebrow">02 / In the meantime</div><div class="about-bio"><h3>Hi, I'm Jan.</h3><h4>A Creative Technologist.</h4><p>I help brands and individuals transform ideas into meaningful visual experiences.</p><p>Working across graphic design, photography, videography, branding, and web, I combine creativity with technology to craft work that is clean, modern, and intentional.</p><p>My focus is creating visuals that not only look great but also communicate with clarity and purpose.</p></div></div></section></div>
+<div class="page" id="story"><section class="article-body"><button class="back" onclick="location.hash='journal'">← Back to Journal</button><div id="story-content"></div></section></div></main>
+<footer class="footer"><div class="eyebrow">Have a story? / Let's connect</div><h2 class="fixed-contact-headline"><span class="contact-first-line">TURNING IDEAS</span><br><span class="contact-second-line">INTO <span class="scribble contact-highlight">REALITY.</span></span></h2><a class="cta contact-cta" href="mailto:shotbymrjan@gmail.com?subject=Let%27s%20Talk%20%7C%20Collective%20Works" id="contact-cta">LET'S TALK ↗︎</a><div class="footer-row"><span class="footer-brand"><img class="logo-light" src="assets/SBMJ-B.png" alt="Mr Jan signature"><img class="logo-dark" src="assets/SBMJ-W.png" alt="" aria-hidden="true"></span><span>Independent visual archive / V4.8</span><span>© 2026 / ALL RIGHTS RESERVED</span></div></footer></div><div class="modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Video player"><div class="modal-box"><div class="modal-top"><strong>NOW PLAYING / VISUAL JOURNAL</strong><button id="close-video">CLOSE ✕</button></div><div id="video-slot"></div></div></div>
+<!-- V2.0: Reusable overlay for creative projects, articles, and vlogs. -->
+<div class="content-modal" id="content-modal" role="dialog" aria-modal="true" aria-label="Content viewer" aria-hidden="true">
+  <div class="content-panel" id="content-panel">
+    <div class="content-toolbar"><span id="content-kind">COLLECTIVE / VIEWER</span><button class="content-close" id="content-close" type="button">CLOSE ✕</button></div>
+    <div class="content-inner" id="content-inner"></div>
+  </div>
+</div>
+<script>
+// Color mode follows the system preference until the visitor selects a mode.
+const themeKey='collective-works-theme';
+const themeButton=document.getElementById('theme-toggle');
+function applyTheme(theme){
+  document.documentElement.dataset.theme=theme;
+  const next=theme==='dark'?'light':'dark';
+  themeButton.setAttribute('aria-label',`Switch to ${next} mode`);
+  themeButton.title=`Switch to ${next} mode`;
+  themeButton.querySelector('.theme-icon').innerHTML=theme==='dark'?'<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>':'<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.1A8.5 8.5 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14.1Z"/></svg>';
+  themeButton.querySelector('.theme-label').textContent=next.toUpperCase();
+}
+let savedTheme=null;
+try{savedTheme=localStorage.getItem(themeKey)}catch(e){}
+applyTheme(savedTheme==='dark'||savedTheme==='light'?savedTheme:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+themeButton.addEventListener('click',()=>{
+  const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+  applyTheme(next);
+  try{localStorage.setItem(themeKey,next)}catch(e){}
+});
+
+// ==========================================================
+// V1.6 / MOBILE MENU BEHAVIOR
+// Keep aria-expanded in sync with the visible dropdown.
+// ==========================================================
+const menuButton=document.getElementById('menu-toggle');
+const primaryNavigation=document.getElementById('primary-navigation');
+function setMenuOpen(open){
+  primaryNavigation.classList.toggle('is-open',open); // Show or hide links.
+  menuButton.setAttribute('aria-expanded',String(open)); // Screen reader state.
+  menuButton.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');
+}
+menuButton.addEventListener('click',()=>setMenuOpen(menuButton.getAttribute('aria-expanded')!=='true'));
+primaryNavigation.addEventListener('click',event=>{
+  if(event.target.closest('a'))setMenuOpen(false); // Close after selecting a page.
+});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape')setMenuOpen(false); // Escape dismisses the menu.
+});
+document.addEventListener('click',event=>{
+  if(!event.target.closest('.nav'))setMenuOpen(false); // Outside click dismisses it.
+});
+window.addEventListener('resize',()=>{
+  if(window.innerWidth>800)setMenuOpen(false); // Reset on desktop.
+});
+
+// Version 1 sample content. Replace image URLs, copy, and YouTube IDs with your own work.
+/* V2.1: Use a single dated content list for LOG and the three newest homepage entries. */
+const stories=[];
+/* V2.0: Each project can be extended with gallery:[imageURL,...], description, body:[paragraph,...], youtube:'VIDEO_ID'. */
+const works=[];
+/* V2.3 / SHARED CONTENT SOURCE
+   Studio is the authoring source for BOTH Collective Works and Life Log.
+   Demo content is shown only until the first Studio entry is created.
+   Drafts never appear publicly. Changes in another tab refresh automatically.
+   IMPORTANT: localStorage works only in the same browser and origin.
+   This is NOT secure online publishing or cross-device synchronization.
+*/
+// V2.9: Featured homepage photo settings, saved by Studio in the same browser.
+const HERO_KEY='collective-hero-v29';
+function refreshFeaturedHero(publishedSettings){
+  const fallback='https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1300&q=85';
+  let settings={};
+  if(publishedSettings)settings=publishedSettings;
+  const heading=document.getElementById('featured-hero-title');
+  const photo=document.getElementById('featured-hero-image');
+  const title=String(settings.title||'LIFE IN MOTION.').trim();
+  heading.textContent=title;
+  heading.style.whiteSpace='pre-line'; // Preserve manual line breaks in Studio title.
+  const issue=Number.parseInt(settings.issue,10);
+  document.getElementById('hero-issue-label').textContent='An ongoing archive / Issue No. '+String(Number.isFinite(issue)&&issue>0?issue:1).padStart(3,'0');
+  photo.src=settings.image||fallback;
+  photo.onerror=()=>{photo.onerror=null;photo.src=fallback};
+}
+refreshFeaturedHero();
+const ABOUT_PHOTO_KEY='collective-about-photo-v31';
+function refreshAboutPhoto(publishedSettings){const box=document.getElementById('about-photo-display');let src='';const photoSettings=publishedSettings||{};src=photoSettings.image||'';box.replaceChildren();if(!src){const span=document.createElement('span');span.textContent='IMAGE / COMING SOON';box.append(span);box.setAttribute('aria-label','Square placeholder for a future portrait photograph');return}const img=document.createElement('img');img.alt='Portrait photograph';img.src=src;img.style.objectPosition=({top:'center top',center:'center center',bottom:'center bottom'})[photoSettings.position]||'center center';img.onerror=()=>{box.replaceChildren();const span=document.createElement('span');span.textContent='IMAGE / COMING SOON';box.append(span)};box.append(img);box.setAttribute('aria-label','About page portrait photograph')}
+refreshAboutPhoto();
+
+
+
+
+const STUDIO_KEY='collective-studio-v22'; // Keep old key to preserve V2.2 data.
+// V4.8: Published website content is loaded from the repository's content.json.
+// The public website never reads Studio drafts or browser-local entries.
+async function loadPublishedContent(){
+  try{
+    const response=await fetch('./content.json',{cache:'no-cache'});
+    if(!response.ok)throw new Error('HTTP '+response.status);
+    const content=await response.json();
+    if(!content||!Array.isArray(content.works)||!Array.isArray(content.stories))throw new Error('Invalid published content format');
+    const valid=e=>e&&typeof e.title==='string'&&typeof e.type==='string';
+    works.splice(0,works.length,...content.works.filter(valid));
+    stories.splice(0,stories.length,...content.stories.filter(valid));
+    refreshFeaturedHero(content.hero||{});
+    refreshAboutPhoto(content.about||{});
+  }catch(error){
+    console.warn('Could not load published content.json; showing empty portfolio.',error);
+    works.splice(0,works.length);
+    stories.splice(0,stories.length);
+    refreshFeaturedHero({});refreshAboutPhoto({});
+  }
+  renderCards();
+}
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+/* V2.8: Shared missing-image placeholder. Never use gallery art as an automatic cover. */
+function noImageHTML(){return `<div class="no-image" role="img" aria-label="No image available"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="7" width="32" height="26"/><circle cx="13" cy="15" r="3"/><path d="M5 29l10-10 7 7 5-5 9 9"/></svg><span>NO IMAGE</span></div>`}
+function coverHTML(item){return item.img?`<img loading="lazy" src="${esc(item.img)}" alt="${esc(item.title)}" onerror="this.outerHTML=noImageHTML()">`:noImageHTML()}
+function card(item,isStory){const action=isStory?`data-story="${item.id}"`:`data-work="${esc(item.title)}"`;return `<article class="card" tabindex="0" role="button" ${action}><div class="thumb">${coverHTML(item)}${item.type==='Video'?'<span class="play">▶</span>':''}</div><div class="meta"><span>${esc(item.type.toUpperCase())}</span><span>${esc(item.date)}</span></div><h3>${esc(item.title)}</h3><p>${esc(item.description||'Explore the project ↗︎')}</p></article>`}
+// V2.1: Date-sort a copy so new posts automatically take the first three positions.
+// When adding a post, set published to YYYY-MM-DD (for example, 2026-10-23).
+function newestStories(){return [...stories].sort((a,b)=>String(b.published||'').localeCompare(String(a.published||'')));}
+function lifeLogEmpty(){return '<div class="posting-soon life-log-empty" role="status"><strong>POSTING SOON.</strong><p>New stories, moments, and experiences are on their way.</p><small>00 STORIES DOCUMENTED</small></div>'}
+function renderCards(){
+  const ordered=newestStories();
+  document.getElementById('home-stories').innerHTML=ordered.length?ordered.slice(0,3).map(x=>card(x,true)).join(''):'<div class="posting-soon"><strong>POSTING SOON.</strong><p>New stories, moments, and experiences are on their way.</p><small>00 STORIES DOCUMENTED</small></div>';
+  document.getElementById('journal-cards').innerHTML=ordered.length?ordered.map(x=>card(x,true)).join(''):lifeLogEmpty();
+  document.getElementById('work-cards').innerHTML=works.length?works.map(x=>card(x,false)).join(''):'<div class="works-empty-state" role="status"><strong class="works-empty-title">GOOD THINGS<br><span class="works-empty-accent">TAKE TIME.</span></strong><p>Something creative is brewing. Stay tuned.</p><small>00 PROJECTS DOCUMENTED</small></div>';
+}
+function route(){const key=(location.hash.slice(1).split('/')[0]||'home');const page=document.getElementById(key)?key:'home';document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===page));document.querySelectorAll('[data-nav]').forEach(x=>x.classList.toggle('active',x.dataset.nav===page));window.scrollTo(0,0)}
+function openVideo(raw){const id=normalizeYouTubeId(raw);if(!id)return;document.getElementById('video-slot').innerHTML=videoEmbed(id,'YouTube video');document.getElementById('video-modal').classList.add('open')}
+function closeVideo(){document.getElementById('video-modal').classList.remove('open');document.getElementById('video-slot').innerHTML=''}
+// =============================================================
+// V2.0 / MODAL STATE + CONTENT RENDERING
+// The overlay keeps the current page and filter selection intact.
+// =============================================================
+const contentModal=document.getElementById('content-modal');
+const contentInner=document.getElementById('content-inner');
+const contentKind=document.getElementById('content-kind');
+const contentClose=document.getElementById('content-close');
+let previousFocus=null; // Return keyboard focus to the selected card.
+let activeGallery=[]; // Images in the currently open photography project.
+let galleryIndex=0; // Index of the photograph currently on screen.
+function showContent(html,label){
+  previousFocus=document.activeElement;
+  contentKind.textContent=label;
+  contentInner.innerHTML=html;
+  // Fit medium-length viewer headings on one line on desktop without clipping.
+  const heading=contentInner.querySelector('h2');
+  if(heading && window.innerWidth>800){
+    const available=contentInner.clientWidth;
+    const probe=document.createElement('canvas').getContext('2d');
+    const style=getComputedStyle(heading);
+    let size=parseFloat(style.fontSize);
+    const minimum=32;
+    // Canvas width measures the text; CSS letter spacing is included separately.
+    while(size>minimum){
+      probe.font=`900 ${size}px "Barlow Condensed"`;
+      const textWidth=probe.measureText(heading.textContent).width;
+      const spacing=(heading.textContent.length-1)*parseFloat(style.letterSpacing||0)*(size/parseFloat(style.fontSize));
+      if(textWidth+spacing<=available-4)break;
+      size-=1;
+    }
+    heading.style.fontSize=`${size}px`;
+    if(size===minimum){heading.style.whiteSpace='normal';heading.style.overflowWrap='break-word'}
+  }
+  contentModal.classList.add('open');
+  contentModal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  document.getElementById('content-panel').scrollTop=0;
+  contentClose.focus();
+}
+function closeContent(){
+  contentModal.classList.remove('open');
+  contentModal.setAttribute('aria-hidden','true');
+  contentInner.replaceChildren(); // Removes YouTube iframe and stops playback.
+  document.body.style.overflow='';
+  activeGallery=[];
+  if(previousFocus?.isConnected)previousFocus.focus();
+}
+function normalizeYouTubeId(raw){
+  const input=String(raw||'').trim();
+  if(/^[\w-]{11}$/.test(input))return input;
+  try{
+    const url=new URL(input);
+    const host=url.hostname.toLowerCase();
+    if(!['youtube.com','www.youtube.com','m.youtube.com','music.youtube.com','youtu.be','www.youtu.be','youtube-nocookie.com','www.youtube-nocookie.com'].includes(host))return '';
+    const parts=url.pathname.split('/').filter(Boolean);
+    const id=host.endsWith('youtu.be')?parts[0]:url.searchParams.get('v')||(['shorts','embed','live','v'].includes(parts[0])?parts[1]:'');
+    return /^[\w-]{11}$/.test(id||'')?id:'';
+  }catch{return '';}
+}
+function videoEmbed(raw,title){
+  const id=normalizeYouTubeId(raw);
+  if(!id)return '<p>Video coming soon. Add a valid YouTube URL or video ID in Studio.</p>';
+  const watch=`https://www.youtube.com/watch?v=${id}`;
+  return `<div class="youtube-embed"><iframe src="https://www.youtube.com/embed/${id}?rel=0" title="${esc(title)}" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen loading="eager"></iframe><a class="youtube-fallback" href="${watch}" target="_blank" rel="noopener noreferrer">OPEN ON YOUTUBE ↗︎</a></div>`;
+}
+/* V2.5: Shared image carousel for Life Log and creative projects. */
+function galleryMarkup(){
+ const src=activeGallery[galleryIndex];
+ if(!src)return '';
+ const controls=activeGallery.length>1?`<div class="gallery-controls"><button type="button" data-gallery="prev" aria-label="Previous image">← PREVIOUS</button><span>${String(galleryIndex+1).padStart(2,'0')} / ${String(activeGallery.length).padStart(2,'0')}</span><button type="button" data-gallery="next" aria-label="Next image">NEXT →</button></div>`:'';
+ return `<button type="button" class="gallery-zoom" data-zoom aria-label="Enlarge image"><img id="gallery-image" src="${esc(src)}" alt="Image ${galleryIndex+1} of ${activeGallery.length}"></button>${controls}`;
+}
+function setGallery(items){activeGallery=(items||[]).filter(Boolean);galleryIndex=0;return activeGallery.length?`<div id="gallery-slot">${galleryMarkup()}</div>`:''}
+function moveGallery(step){if(!activeGallery.length)return;galleryIndex=(galleryIndex+step+activeGallery.length)%activeGallery.length;const slot=document.getElementById('gallery-slot');if(slot)slot.innerHTML=galleryMarkup()}
+function openStory(id){
+ const item=stories.find(x=>x.id===id);if(!item)return;
+ const header=`<div class="viewer-meta">${esc(item.type)} / ${esc(item.date)}</div><h2>${esc(item.title)}</h2>`;
+ // Video entries use the cover only on their Life Log card, not in the popup.
+ const media=item.type==='Video'?'':setGallery(item.gallery?.length?item.gallery:[item.img]);
+ const paragraphs=(item.body||[]).filter(p=>String(p).trim());
+ const description=paragraphs.length?paragraphs:([item.description].filter(Boolean));
+ const body=`<div class="typewriter-description">${description.map(p=>`<p>${esc(p)}</p>`).join('')}</div>`;
+ if(item.type==='Video')showContent(header+videoEmbed(item.youtube,item.title)+body,'LOG / VIDEO');
+ else showContent(header+media+body,'LOG / ARTICLE');
+}
+function openWork(title){
+  const item=works.find(x=>x.title===title);if(!item)return;
+  const header=`<div class="viewer-meta">${esc(item.type)} / ${esc(item.date)}</div><h2>${esc(item.title)}</h2>`;
+  const paragraphs=(item.body||[]).filter(p=>String(p).trim());
+  const description=paragraphs.length?paragraphs:([item.description||'An ongoing creative exploration.'].filter(Boolean));
+  const body=`<div class="typewriter-description">${description.map(p=>`<p>${esc(p)}</p>`).join('')}</div>`;
+  if(item.type==='Videography'){
+    // Creative films use the project's own YouTube ID, not vlog IDs.
+    const media=item.youtube?videoEmbed(item.youtube,item.title):`<div class="thumb">${coverHTML(item)}</div><p>Creative video coming soon. Add this project's YouTube ID to enable playback.</p>`;
+    showContent(header+media+body,'COLLECTIVE WORKS / VIDEOGRAPHY');
+  }else{
+    showContent(header+setGallery(item.gallery?.length?item.gallery:[item.img])+body,`COLLECTIVE WORKS / ${item.type.toUpperCase()}`);
+  }
+}
+// Click/tap works for cards, filters, gallery controls, and the modal.
+document.addEventListener('click',e=>{
+  const story=e.target.closest('[data-story]');if(story){openStory(story.dataset.story);return}
+  const work=e.target.closest('[data-work]');if(work){openWork(work.dataset.work);return}
+  const gallery=e.target.closest('[data-gallery]');
+  if(gallery){moveGallery(gallery.dataset.gallery==='next'?1:-1);return}
+  if(e.target.closest('[data-zoom]')){const src=activeGallery[galleryIndex];if(src)openFullscreen(src);return}
+  const filter=e.target.closest('.filter');if(filter){
+    const parent=filter.parentElement;
+    parent.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===filter));
+    const isWork=parent.id==='work-filters';
+    const list=(isWork?works:newestStories()).filter(x=>filter.dataset.filter==='All'||x.type===filter.dataset.filter);
+    document.getElementById(isWork?'work-cards':'journal-cards').innerHTML=list.length?list.map(x=>card(x,!isWork)).join(''):(isWork?'<div class="works-empty-state"><strong class="works-empty-title">GOOD THINGS<br><span class="works-empty-accent">TAKE TIME.</span></strong><p>Something creative is brewing. Stay tuned.</p><small>00 PROJECTS DOCUMENTED</small></div>':lifeLogEmpty());
+  }
+});
+/* Touch swipe navigation for phone galleries. */
+let touchStartX=null;
+contentInner.addEventListener('touchstart',e=>{if(e.touches.length===1&&e.target.closest('#gallery-slot'))touchStartX=e.touches[0].clientX},{passive:true});
+contentInner.addEventListener('touchend',e=>{if(touchStartX===null)return;const dx=e.changedTouches[0].clientX-touchStartX;touchStartX=null;if(Math.abs(dx)>55)moveGallery(dx<0?1:-1)},{passive:true});
+/* Fullscreen uses a separate overlay, so the article modal stays open. */
+function openFullscreen(src){const overlay=document.createElement('div');overlay.className='image-fullscreen';overlay.innerHTML=`<button type="button" aria-label="Close enlarged image">CLOSE ✕</button><img src="${esc(src)}" alt="Enlarged gallery photograph">`;overlay.addEventListener('click',e=>{if(e.target===overlay||e.target.tagName==='BUTTON')overlay.remove()});document.body.appendChild(overlay);overlay.querySelector('button').focus()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelector('.image-fullscreen')?.remove()});
+contentClose.addEventListener('click',closeContent);
+contentModal.addEventListener('click',e=>{if(e.target===contentModal)closeContent()});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeContent();closeVideo();return}
+  if(contentModal.classList.contains('open')){
+    if(e.key==='ArrowRight'){moveGallery(1);return}
+    if(e.key==='ArrowLeft'){moveGallery(-1);return}
+    // Keep keyboard focus within the open dialog.
+    if(e.key==='Tab'){
+      const controls=[...contentModal.querySelectorAll('button:not(:disabled),iframe')];
+      const first=controls[0],last=controls[controls.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+    }
+    return;
+  }
+  if((e.key==='Enter'||e.key===' ')&&e.target.matches('.card')){e.preventDefault();e.target.click()}
+});
+document.getElementById('close-video').addEventListener('click',closeVideo);
+document.getElementById('video-modal').addEventListener('click',e=>{if(e.target.id==='video-modal')closeVideo()});
+window.addEventListener('hashchange',()=>{if(contentModal.classList.contains('open'))closeContent();route()});
+/* V3.7 / Contact copy shared with Studio on this browser origin. */
+/* V3.7: Fixed contact headline. */
+/* V3.7: Fixed contact headline. */
+route();loadPublishedContent();
+</script></body></html>

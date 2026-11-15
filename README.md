@@ -22,3 +22,8 @@ Static GitHub Pages portfolio with a separate local Studio editor.
 - GitHub Pages cannot write files to the repository. Publishing requires the manual upload described above.
 - Full Studio backups can contain drafts; never upload them to your public repository.
 - The YouTube embed restrictions (including error 153) depend on YouTube/browser conditions.
+
+### v4.9 content types
+In Studio, create posts from Collective Works or Life Log. Article, Creative Design and Photography support text and images. Video and Videography support YouTube and text, with a cover thumbnail for cards. Switching types hides irrelevant fields without deleting their stored values. Video posts require a valid YouTube URL before publishing.
+
+Studio still saves edits in your browser. To update GitHub Pages, open Media / Backup, download published content.json, replace content.json in your repository root and commit the change. Make a full Studio backup before replacing website files or clearing browser storage.

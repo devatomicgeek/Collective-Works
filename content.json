@@ -1,7 +1,28 @@
 {
   "version": "4.8",
   "works": [],
-  "stories": [],
-  "hero": {},
+  "stories": [
+    {
+      "id": "studio-f8192dac-1686-4862-b76f-3f5f61bccaf3",
+      "title": "Life Log #1",
+      "type": "Article",
+      "published": "2026-11-15",
+      "date": "NOV 2026",
+      "img": "https://drive.google.com/thumbnail?id=1_cb2VbJWZv6VE5jhRF7Q5YdTL7-99ge0&sz=w1600",
+      "description": "something about the website is being sdone",
+      "body": [
+        "something about the website is being sdone"
+      ],
+      "youtube": "B5kinrHprsQ",
+      "gallery": [
+        "https://drive.google.com/thumbnail?id=1_cb2VbJWZv6VE5jhRF7Q5YdTL7-99ge0&sz=w1600"
+      ]
+    }
+  ],
+  "hero": {
+    "title": "LIFE IN\nMOTION.",
+    "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1300&q=85",
+    "issue": 1
+  },
   "about": {}
 }

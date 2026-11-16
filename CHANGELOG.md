@@ -14,3 +14,9 @@
 - Studio Selects shows 1920 x 1080 pixel guidance, a 16:9 preview, accessible dimension checking, and responsive headline previews.
 - Publishing blocks images with verified incorrect dimensions. Unverifiable Google Drive URLs receive a warning.
 - Existing content structure and publishing workflow preserved.
+
+## v5.2
+- Square 1080x1080 THE SELECTS previews, checks and responsive image display.
+- Responsive hero text and footer alignment.
+- THE PROFILE editor for About page photo and biography fields.
+- Removed local image upload controls.

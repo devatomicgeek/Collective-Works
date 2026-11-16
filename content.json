@@ -1,5 +1,5 @@
 {
-  "version": "4.8",
+  "version": "5.0",
   "works": [],
   "stories": [
     {
@@ -24,5 +24,16 @@
     "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1300&q=85",
     "issue": 1
   },
-  "about": {}
+  "about": {},
+  "selects": [
+    {
+      "id": "select-001",
+      "issueNumber": 1,
+      "headline": "LIFE IN MOTION.",
+      "image": "https://drive.google.com/thumbnail?id=1hAk9R8JcRwG4vUzwy_Hw_1IZUKDGvi0e&sz=w1600",
+      "date": "2026-11-15",
+      "status": "published",
+      "featured": true
+    }
+  ]
 }

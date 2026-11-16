@@ -20,3 +20,7 @@
 - Responsive hero text and footer alignment.
 - THE PROFILE editor for About page photo and biography fields.
 - Removed local image upload controls.
+
+## v5.3
+- Rebalanced THE SELECTS hero grid on desktop and tablet; fixed text and image alignment.
+- Preserved mobile layout, Selects archive, and existing published content.

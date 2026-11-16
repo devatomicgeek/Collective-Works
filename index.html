@@ -395,6 +395,13 @@ body{background:var(--shell-surround);transition:background .25s,color .25s}
 }
 @media(min-width:701px) and (max-width:1050px){#home .hero-title{font-size:clamp(38px,6.2vw,68px)}}
 @media(max-width:700px){#home .hero>.eyebrow{grid-column:1/-1;grid-row:1}#home .hero-title{grid-column:1/-1;grid-row:2;white-space:pre-line;text-wrap:balance}#home .hero-image{grid-column:1/-1;grid-row:3;aspect-ratio:1/1}#home .hero-copy{grid-column:1;grid-row:4}#home .hero-right{grid-column:2;grid-row:4}}
+
+/* V5.4 / THE SELECTS: larger fitted editorial headline without image overlap. */
+@media(min-width:701px){
+ #home .hero-title{font-size:var(--selects-fitted-size,clamp(42px,6.4vw,94px));text-wrap:initial;overflow-wrap:normal;word-break:normal;max-width:100%;min-width:0;line-height:.87;letter-spacing:-.025em}
+ #home .hero-image{min-width:0}
+}
+@media(max-width:700px){#home .hero-title{font-size:clamp(48px,12vw,84px);text-wrap:balance;overflow-wrap:break-word}}
 </style></head><body><div class="shell"><header class="nav"><a class="brand" href="#home" aria-label="Home"><img class="brand-logo logo-light" src="assets/SBMJ-B.png" alt="Mr Jan signature"><img class="brand-logo logo-dark" src="assets/SBMJ-W.png" alt="" aria-hidden="true"></a><div class="descriptor">INDEPENDENT VISUAL JOURNAL<br>DESIGN / PHOTO / FILM</div><nav class="links" id="primary-navigation" aria-label="Main navigation"><a href="#home" data-nav="home">Home</a><a href="#works" data-nav="works">Collective Works</a><a href="#journal" data-nav="journal">LIFE LOG</a><a href="#about" data-nav="about">About</a></nav><button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation"><span class="menu-lines" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-caption">MENU</span></button><div class="status-cell"><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch color theme"><span class="theme-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.1A8.5 8.5 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14.1Z"/></svg></span><span class="theme-label">DARK</span></button></div></header>
 <main><div class="page" id="home"><section class="hero"><div class="eyebrow" id="hero-issue-label">An ongoing archive / Issue No. 001</div><h1 class="hero-title" id="featured-hero-title">LIFE IN<br>MOTION.</h1><img class="hero-image" id="featured-hero-image" tabindex="0" role="button" aria-label="Browse The Selects archive" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1300&q=85" alt="Cinematic mountain landscape"><div class="hero-copy">MOMENTS.<br>PLACES.<br>STORIES.</div><div class="hero-right"><span class="hero-right-description">A personal visual journal<br>of things worth remembering.</span><span class="hero-right-date">EST. 2026</span></div></section><section class="statement"><div>EVERY FRAME</div><div><span class="scribble statement-highlight">tells a story.</span></div></section><section class="section"><div class="section-head"><h2>RECENTLY DOCUMENTED.</h2><a href="#journal">ALL STORIES ↗︎</a></div><div class="cards" id="home-stories"></div></section><section class="split"><div><div class="eyebrow">Creative archive</div><h2>BEYOND<br>THE FRAME<span style="color:var(--red)">.</span></h2><p>A collection of ideas made visible. From graphic explorations to photographs and moving images.</p><a class="cta" href="#works">Explore Collective Works ↗︎</a></div><div><div class="eyebrow">Three disciplines</div><a class="category" href="#works">CREATIVE DESIGN <span>01 ↗︎</span></a><a class="category" href="#works">PHOTOGRAPHY <span>02 ↗︎</span></a><a class="category" href="#works">VIDEOGRAPHY <span>03 ↗︎</span></a></div></section></div>
 <div class="page" id="works"><section class="page-hero"><div class="eyebrow">Creative Archive</div><h1>COLLECTIVE<br>WORKS.</h1><p>Visual explorations across creative design, photography, and videography.<br class="desktop-break">An evolving collection of things made and moments captured.</p></section><section class="section"><div class="filters" id="work-filters"><button class="filter active" data-filter="All">All</button><button class="filter" data-filter="Creative Design">Creative Design</button><button class="filter" data-filter="Photography">Photography</button><button class="filter" data-filter="Videography">Videography</button></div><div class="cards" id="work-cards"></div></section></div>
@@ -481,9 +488,51 @@ function refreshFeaturedHero(publishedSettings){
   const issue=Number.parseInt(settings.issue,10);
   document.getElementById('hero-issue-label').textContent='An ongoing archive / Issue No. '+String(Number.isFinite(issue)&&issue>0?issue:1).padStart(3,'0');
   photo.src=settings.image||fallback;
+  requestAnimationFrame(fitSelectsHeadline);
   photo.onerror=()=>{photo.onerror=null;photo.src=fallback};
 }
 refreshFeaturedHero();
+// Fit 3-5 word Selects headlines to their own column. Never overlap the square image.
+function fitSelectsHeadline(){
+ const el=document.getElementById('featured-hero-title');
+ const photo=document.getElementById('featured-hero-image');
+ if(!el||!photo)return;
+ el.style.removeProperty('--selects-fitted-size');
+ if(window.innerWidth<=700)return;
+ const width=el.getBoundingClientRect().width;
+ const imageHeight=photo.getBoundingClientRect().height;
+ if(width<80||imageHeight<80)return;
+ const text=(el.textContent||'').trim();
+ const lines=text.split(/\n/).map(x=>x.trim()).filter(Boolean);
+ const availableHeight=Math.max(120,imageHeight*.83);
+ const style=getComputedStyle(el);
+ const canvas=document.createElement('canvas');
+ const ctx=canvas.getContext('2d');
+ let low=26,high=Math.min(220,Math.max(90,width*.42));
+ function fits(size){
+  ctx.font=`${style.fontWeight} ${size}px ${style.fontFamily}`;
+  // Approximate CSS letter spacing, including negative tracking.
+  const tracking=-.025*size;
+  const words=lines.flatMap(line=>line.split(/\s+/));
+  if(words.some(w=>ctx.measureText(w).width+Math.max(0,w.length-1)*tracking>width-2))return false;
+  let count=0;
+  for(const line of lines){
+   let current='';
+   for(const word of line.split(/\s+/)){
+    const next=current?current+' '+word:word;
+    const measure=ctx.measureText(next).width+Math.max(0,next.length-1)*tracking;
+    if(current&&measure>width-2){count++;current=word}else current=next;
+   }
+   count++;
+  }
+  return count*size*.87<=availableHeight;
+ }
+ for(let i=0;i<20;i++){const mid=(low+high)/2;if(fits(mid))low=mid;else high=mid}
+ el.style.setProperty('--selects-fitted-size',Math.floor(low)+'px');
+}
+window.addEventListener('resize',fitSelectsHeadline,{passive:true});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitSelectsHeadline);
+window.addEventListener('load',fitSelectsHeadline);
 // V5.0 / THE SELECTS: Public archive is read only from published content.json.
 let selectIssues=[],selectIndex=0;
 function setSelects(issues,legacy){const fallback={issueNumber:Number(legacy.issue)||1,headline:legacy.title||'LIFE IN MOTION.',image:legacy.image||'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1300&q=85',status:'published',featured:true};selectIssues=Array.isArray(issues)?issues.filter(i=>i&&i.status==='published'&&i.image&&i.headline).sort((a,b)=>a.issueNumber-b.issueNumber):[fallback];const featured=selectIssues.find(x=>x.featured)||selectIssues[selectIssues.length-1];if(featured)refreshFeaturedHero({issue:featured.issueNumber,title:featured.headline,image:featured.image});}
